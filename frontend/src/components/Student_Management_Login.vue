@@ -46,7 +46,6 @@ const handleLogin = async () => {
   errorMessage.value = ''
 
   try {
-    // 修改请求地址为相对路径
     const response = await axios.post('/auth/login', {
         username: username.value,
         password: password.value
@@ -65,7 +64,7 @@ const handleLogin = async () => {
 
       // 设置全局 axios 请求头
       axios.defaults.headers.common['Authorization'] = `Bearer ${jwtToken}`;
-      // 登录成功后跳转到学生管理页面
+      // 登录成功后跳转到学生管理页面，也就是主页面
       router.push('/management');
     } else {
       errorMessage.value = '未获取到有效的 JWT 令牌';

@@ -49,7 +49,7 @@ import axios from 'axios';
 import { useRouter } from 'vue-router';
 
 const router = useRouter();
-// 初始化学生信息对象，与模板字段对应
+// 初始化学生信息对象，与模板字段对应，因为写后端的时候忘记看顺序了
 const newStudent = ref({
   name: '',
   age: 0,
@@ -63,7 +63,6 @@ const newStudent = ref({
 const submitAddStudent = async () => {
   const jwtToken = localStorage.getItem('jwtToken');
   try {
-    // 发送包含学生信息的 POST 请求
     await axios.post('/students/create', newStudent.value, {
       headers: {
         'Authorization': `Bearer ${jwtToken}`

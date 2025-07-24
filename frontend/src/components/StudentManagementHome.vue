@@ -208,7 +208,7 @@ const goToStudentManagement = () => {
   background-color: #114c8a;
   width: 200px;
   padding: 20px 0;
-  height: 100%; /* 确保侧边栏高度占满父容器 */
+  height: 100%;
 }
 
 .nav-btn {
@@ -242,7 +242,7 @@ const goToStudentManagement = () => {
   display: flex;
   flex-direction: column;
   align-items: center;
-  overflow-y: auto; /* 当内容超出时显示滚动条 */
+  overflow-y: auto;
 }
 
 .add-btn {

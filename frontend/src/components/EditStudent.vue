@@ -117,7 +117,7 @@ const submitEdit = async () => {
   }
 };
 
-// 返回上一页
+// 返回上一页（主页面）
 const goBack = () => {
   router.go(-1);
 };

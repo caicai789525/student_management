@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <!-- 路由出口，用于渲染匹配的路由组件 -->
     <router-view />
   </div>
 </template>
