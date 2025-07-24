@@ -6,6 +6,11 @@ import EditStudent from '../components/EditStudent.vue';
 
 const routes = [
   {
+    path: '/',
+    // 重定向到登录页面
+    redirect: '/login'
+  },
+  {
     path: '/login',
     name: 'StudentLogin',
     component: StudentLogin
@@ -40,7 +45,6 @@ const router = createRouter({
   routes
 });
 
-// 路由守卫，检查是否需要登录
 router.beforeEach((to, from, next) => {
   if (to.meta.requiresAuth) {
     const jwtToken = localStorage.getItem('jwtToken');

@@ -135,7 +135,7 @@ const goToStudentManagement = () => {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #007bff;
+  background-color: #004085;
   padding: 15px 30px;
 }
 
@@ -205,7 +205,7 @@ const goToStudentManagement = () => {
 }
 
 .sidebar {
-  background-color: #004085;
+  background-color: #114c8a;
   width: 200px;
   padding: 20px 0;
   height: 100%; /* 确保侧边栏高度占满父容器 */
