@@ -10,14 +10,13 @@ import (
 
 func SetupRouter(authController *controller.AuthController, studentController *controller.StudentController, authService *service.AuthService) *gin.Engine {
 	r := gin.Default()
-
+	//登陆路由
 	authGroup := r.Group("/auth")
 	{
-		authGroup.POST("/register", authController.Register)
-		log.Println("正在注册 /auth/login POST 路由")
+		authGroup.POST("/register", authController.Register) //注册路由,就拿来当后台了,要加就直接在服务器加或再写一个管理员的管理功能
 		authGroup.POST("/login", authController.Login)
 	}
-
+	//管理学生的主要功能
 	studentGroup := r.Group("/students")
 	studentGroup.Use(middleware.AuthMiddleware(authService))
 	{

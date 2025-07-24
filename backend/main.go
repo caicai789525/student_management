@@ -88,11 +88,10 @@ func main() {
 // CORSMiddleware CORS 中间件
 func CORSMiddleware() gin.HandlerFunc {
 	return func(c *gin.Context) {
-		// 设置允许的源，这里可以根据实际情况修改为前端域名
-		c.Writer.Header().Set("Access-Control-Allow-Origin", "http://localhost:3332")
+		c.Writer.Header().Set("Access-Control-Allow-Origin", "*") //用的时候改成前端服务器地址吧
 		c.Writer.Header().Set("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS")
 		c.Writer.Header().Set("Access-Control-Allow-Headers", "Origin, Content-Type, Accept, Authorization")
-		c.Writer.Header().Set("Access-Control-Allow-Credentials", "true")
+		c.Writer.Header().Set("Access-Control-Allow-Credentials", "false") //这个改成true，不然用不了
 
 		if c.Request.Method == "OPTIONS" {
 			c.AbortWithStatus(204)
